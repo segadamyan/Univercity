@@ -12,5 +12,11 @@ namespace Univercity
             test testing = new test();
             testing.ShowDialog();
         }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.ShowDialog();
+        }
     }
 }
