@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(test));
             this.buttonAnsw1 = new System.Windows.Forms.Button();
             this.buttonAnsw2 = new System.Windows.Forms.Button();
             this.buttonAnsw3 = new System.Windows.Forms.Button();
@@ -41,88 +42,103 @@
             // 
             // buttonAnsw1
             // 
+            this.buttonAnsw1.BackColor = System.Drawing.SystemColors.Control;
             this.buttonAnsw1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonAnsw1.Location = new System.Drawing.Point(32, 244);
+            this.buttonAnsw1.Location = new System.Drawing.Point(42, 244);
             this.buttonAnsw1.Name = "buttonAnsw1";
             this.buttonAnsw1.Size = new System.Drawing.Size(370, 80);
             this.buttonAnsw1.TabIndex = 0;
             this.buttonAnsw1.Tag = "1";
-            this.buttonAnsw1.Text = "button1";
-            this.buttonAnsw1.UseVisualStyleBackColor = true;
+            this.buttonAnsw1.Text = "Answer one";
+            this.buttonAnsw1.UseVisualStyleBackColor = false;
             this.buttonAnsw1.Click += new System.EventHandler(this.checkAnswerEvent);
             // 
             // buttonAnsw2
             // 
             this.buttonAnsw2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonAnsw2.Location = new System.Drawing.Point(555, 244);
+            this.buttonAnsw2.Location = new System.Drawing.Point(582, 244);
             this.buttonAnsw2.Name = "buttonAnsw2";
             this.buttonAnsw2.Size = new System.Drawing.Size(370, 80);
             this.buttonAnsw2.TabIndex = 1;
             this.buttonAnsw2.Tag = "2";
-            this.buttonAnsw2.Text = "button2";
+            this.buttonAnsw2.Text = "Answer two";
             this.buttonAnsw2.UseVisualStyleBackColor = true;
             this.buttonAnsw2.Click += new System.EventHandler(this.checkAnswerEvent);
             // 
             // buttonAnsw3
             // 
             this.buttonAnsw3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonAnsw3.Location = new System.Drawing.Point(32, 356);
+            this.buttonAnsw3.Location = new System.Drawing.Point(42, 356);
             this.buttonAnsw3.Name = "buttonAnsw3";
             this.buttonAnsw3.Size = new System.Drawing.Size(370, 80);
             this.buttonAnsw3.TabIndex = 2;
             this.buttonAnsw3.Tag = "3";
-            this.buttonAnsw3.Text = "button3";
+            this.buttonAnsw3.Text = "Answer tree";
             this.buttonAnsw3.UseVisualStyleBackColor = true;
             this.buttonAnsw3.Click += new System.EventHandler(this.checkAnswerEvent);
             // 
             // buttonAnsw4
             // 
             this.buttonAnsw4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonAnsw4.Location = new System.Drawing.Point(555, 356);
+            this.buttonAnsw4.Location = new System.Drawing.Point(582, 356);
             this.buttonAnsw4.Name = "buttonAnsw4";
             this.buttonAnsw4.Size = new System.Drawing.Size(370, 80);
             this.buttonAnsw4.TabIndex = 3;
             this.buttonAnsw4.Tag = "4";
-            this.buttonAnsw4.Text = "button4";
+            this.buttonAnsw4.Text = "Answer four";
             this.buttonAnsw4.UseVisualStyleBackColor = true;
             this.buttonAnsw4.Click += new System.EventHandler(this.checkAnswerEvent);
             // 
             // labelQuestion
             // 
             this.labelQuestion.AutoSize = true;
+            this.labelQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelQuestion.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelQuestion.Location = new System.Drawing.Point(393, 115);
+            this.labelQuestion.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelQuestion.Location = new System.Drawing.Point(446, 153);
+            this.labelQuestion.Margin = new System.Windows.Forms.Padding(0);
             this.labelQuestion.Name = "labelQuestion";
-            this.labelQuestion.Size = new System.Drawing.Size(66, 30);
+            this.labelQuestion.Padding = new System.Windows.Forms.Padding(10);
+            this.labelQuestion.Size = new System.Drawing.Size(119, 50);
             this.labelQuestion.TabIndex = 4;
-            this.labelQuestion.Text = "label1";
-            this.labelQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelQuestion.Text = "Question";
+            this.labelQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelQuestion.SizeChanged += new System.EventHandler(this.labelQuestion_SizeChanged);
+            this.labelQuestion.Click += new System.EventHandler(this.labelQuestion_Click);
             // 
             // labelProcess
             // 
             this.labelProcess.AutoSize = true;
-            this.labelProcess.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelProcess.BackColor = System.Drawing.Color.Transparent;
+            this.labelProcess.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelProcess.ForeColor = System.Drawing.SystemColors.Control;
             this.labelProcess.Location = new System.Drawing.Point(875, 19);
             this.labelProcess.Name = "labelProcess";
-            this.labelProcess.Size = new System.Drawing.Size(50, 20);
+            this.labelProcess.Size = new System.Drawing.Size(93, 32);
             this.labelProcess.TabIndex = 5;
-            this.labelProcess.Text = "label1";
+            this.labelProcess.Text = "Process";
+            this.labelProcess.Click += new System.EventHandler(this.labelProcess_Click);
             // 
             // labelTimer
             // 
             this.labelTimer.AutoSize = true;
+            this.labelTimer.BackColor = System.Drawing.Color.Transparent;
             this.labelTimer.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelTimer.ForeColor = System.Drawing.SystemColors.Control;
             this.labelTimer.Location = new System.Drawing.Point(32, 24);
             this.labelTimer.Name = "labelTimer";
-            this.labelTimer.Size = new System.Drawing.Size(78, 32);
+            this.labelTimer.Size = new System.Drawing.Size(75, 32);
             this.labelTimer.TabIndex = 6;
-            this.labelTimer.Text = "label1";
+            this.labelTimer.Text = "Timer";
             // 
             // test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 520);
+            this.AutoSize = true;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(997, 521);
             this.Controls.Add(this.labelTimer);
             this.Controls.Add(this.labelProcess);
             this.Controls.Add(this.labelQuestion);
@@ -130,6 +146,7 @@
             this.Controls.Add(this.buttonAnsw3);
             this.Controls.Add(this.buttonAnsw2);
             this.Controls.Add(this.buttonAnsw1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "test";
             this.Text = "test";
             this.Load += new System.EventHandler(this.test_Load);

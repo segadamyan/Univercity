@@ -14,7 +14,6 @@ namespace Univercity
     {
         int correctAnswer;
         int questionNumber;
-        int score;
         static readonly int TOTAL_QUESTIONS = 2;
         DateTime startTime;
 
@@ -35,8 +34,7 @@ namespace Univercity
             if ((TimeSpan.FromMinutes(5) - (DateTime.Now - startTime)).Seconds == 0)
             {
                 timerTest.Stop();
-                MessageBox.Show("Time over, quiz ended, your score" + this.score);
-                this.score = 0;
+                endTest();
                 this.questionNumber = 0;
                 askQuestion(questionNumber);
                 this.startTime = DateTime.Now;
@@ -69,12 +67,13 @@ namespace Univercity
 
         public class Question
         {
-            public readonly String question;
-            public readonly String answer1;
-            public readonly String answer2;
-            public readonly String answer3;
-            public readonly String answer4;
+            public readonly string question;
+            public readonly string answer1;
+            public readonly string answer2;
+            public readonly string answer3;
+            public readonly string answer4;
             public readonly int correctAnswer;
+            private int userAnswer = 0;
 
             public Question(string question, string answer1, string answer2, string answer3, string answer4, int correctAnswer)
             {
@@ -85,27 +84,60 @@ namespace Univercity
                 this.answer4 = answer4;
                 this.correctAnswer = correctAnswer;
             }
+
+            public int UserAnswer
+            {
+                get { return userAnswer; }
+                set { this.userAnswer = value; }
+            }
         }
 
         private void checkAnswerEvent(object sender, EventArgs e)
         {
             var senderObject = (Button)sender;
             int buttonTag = Convert.ToInt32(senderObject.Tag);
-            if (buttonTag == this.correctAnswer)
-            {
-                this.score++;
-            }
+            this.questions[questionNumber].UserAnswer = buttonTag;
             questionNumber++;
             if (questionNumber == TOTAL_QUESTIONS)
             {
                 timerTest.Stop();
-                MessageBox.Show("C++ quiz ended, your score" + this.score);
-                this.score = 0;
+                endTest();
                 this.questionNumber = 0;
                 this.startTime = DateTime.Now;
                 timerTest.Start();
             }
             askQuestion(questionNumber);
+        }
+
+        private void endTest()
+        {
+            int score = 0;
+            for (int i = 0; i <  this.questions.Length; i++)
+            {
+                if (questions[i].UserAnswer == questions[i].correctAnswer)
+                {
+                    score++;
+                }
+            }
+            MessageBox.Show(score.ToString());
+            Report report = new Report(questions);
+            report.ShowDialog();
+            this.Close();
+        }
+
+        private void labelProcess_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelQuestion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelQuestion_SizeChanged(object sender, EventArgs e)
+        {
+            this.labelQuestion.Left = (this.ClientSize.Width - this.labelQuestion.Size.Width) / 2;
         }
     }
 }
