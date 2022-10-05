@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Univercity
+namespace University
 {
     public partial class test : Form
     {
         int correctAnswer;
         int questionNumber;
-        static readonly int TOTAL_QUESTIONS = 2;
+        static readonly int TOTAL_QUESTIONS = 3;
         DateTime startTime;
 
         public test()
@@ -61,8 +61,9 @@ namespace Univercity
 
         private Question[] questions =
         {
-            new Question("Who invented C++?", "Dennis Ritchie", "Ken Thompson", "Brian Kernighan", "Bjarne Stroustrup", 4),
-            new Question("What is C++?", "C++ is an object oriented programming language", "C++ is a procedural programming language", "C++ supports both procedural and object oriented programming language", "C++ is a functional programming language", 3)
+            new Question("Which of the following is NOT an Arithmetic operator in C#.NET?", "**", "+", "%", "/", 1),
+            new Question("Which of the following are NOT Relational operators in C#.NET?", ">=", "!=", "Not", "<>=", 3),
+            new Question("Console.WriteLine(13 / 2 + \" \" + 13 % 2);", "6.5 1", "6.5 0", "6 0", "6 1", 4)
         };
 
         public class Question
@@ -119,10 +120,9 @@ namespace Univercity
                     score++;
                 }
             }
-            MessageBox.Show(score.ToString());
+            this.Close();
             Report report = new Report(questions);
             report.ShowDialog();
-            this.Close();
         }
 
         private void labelProcess_Click(object sender, EventArgs e)

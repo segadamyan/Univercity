@@ -1,4 +1,4 @@
-namespace Univercity
+namespace University
 {
     internal static class Program
     {

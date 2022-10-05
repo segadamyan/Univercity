@@ -1,4 +1,4 @@
-﻿namespace Univercity
+﻿namespace University
 {
     partial class Report
     {
@@ -39,6 +39,7 @@
             this.buttonPrevious = new System.Windows.Forms.Button();
             this.labelScore = new System.Windows.Forms.Label();
             this.labelPage = new System.Windows.Forms.Label();
+            this.buttonClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelQuestion
@@ -121,7 +122,7 @@
             this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNext.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonNext.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonNext.Location = new System.Drawing.Point(634, 331);
+            this.buttonNext.Location = new System.Drawing.Point(800, 325);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(125, 45);
             this.buttonNext.TabIndex = 6;
@@ -135,7 +136,7 @@
             this.buttonPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrevious.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonPrevious.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonPrevious.Location = new System.Drawing.Point(34, 331);
+            this.buttonPrevious.Location = new System.Drawing.Point(49, 325);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(125, 45);
             this.buttonPrevious.TabIndex = 7;
@@ -149,7 +150,7 @@
             this.labelScore.BackColor = System.Drawing.Color.Transparent;
             this.labelScore.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelScore.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelScore.Location = new System.Drawing.Point(48, 33);
+            this.labelScore.Location = new System.Drawing.Point(49, 33);
             this.labelScore.Name = "labelScore";
             this.labelScore.Size = new System.Drawing.Size(74, 32);
             this.labelScore.TabIndex = 8;
@@ -161,19 +162,35 @@
             this.labelPage.BackColor = System.Drawing.Color.Transparent;
             this.labelPage.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelPage.ForeColor = System.Drawing.Color.White;
-            this.labelPage.Location = new System.Drawing.Point(712, 33);
+            this.labelPage.Location = new System.Drawing.Point(900, 25);
             this.labelPage.Name = "labelPage";
             this.labelPage.Size = new System.Drawing.Size(47, 32);
             this.labelPage.TabIndex = 9;
             this.labelPage.Text = "1/2";
             this.labelPage.Click += new System.EventHandler(this.label2_Click);
             // 
+            // buttonClose
+            // 
+            this.buttonClose.BackColor = System.Drawing.Color.MidnightBlue;
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonClose.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonClose.Location = new System.Drawing.Point(800, 325);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(125, 45);
+            this.buttonClose.TabIndex = 10;
+            this.buttonClose.Text = "Close";
+            this.buttonClose.UseVisualStyleBackColor = false;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(800, 400);
+            this.ClientSize = new System.Drawing.Size(1000, 400);
+            this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.labelPage);
             this.Controls.Add(this.labelScore);
             this.Controls.Add(this.buttonPrevious);
@@ -185,6 +202,7 @@
             this.Controls.Add(this.labelUserAnswer);
             this.Controls.Add(this.labelQuestion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(1000, 350);
             this.Name = "Report";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -206,5 +224,6 @@
         private Button buttonPrevious;
         private Label labelScore;
         private Label labelPage;
+        private Button buttonClose;
     }
 }

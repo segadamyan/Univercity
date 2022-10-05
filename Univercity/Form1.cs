@@ -1,4 +1,4 @@
-namespace Univercity
+namespace University
 {
     public partial class Form1 : Form
     {

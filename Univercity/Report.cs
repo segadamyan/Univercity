@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Univercity
+namespace University
 {
     public partial class Report : Form
     {
@@ -19,6 +19,7 @@ namespace Univercity
             InitializeComponent();
             this.questions = questions;
             this.buttonPrevious.Hide();
+            this.buttonClose.Hide();
             showResult(questions[0]);
             changePage();
             showScore();
@@ -87,6 +88,7 @@ namespace Univercity
             if (questionNumber == questions.Count() - 1)
             {
                 this.buttonNext.Hide();
+                this.buttonClose.Show();
             }
             this.buttonPrevious.Show();
             changePage();
@@ -104,6 +106,7 @@ namespace Univercity
                 this.buttonPrevious.Hide();
             }
             this.buttonNext.Show();
+            this.buttonClose.Hide();
             changePage();
         }
 
@@ -115,16 +118,14 @@ namespace Univercity
         private void showScore()
         {
             int score = 0;
-            MessageBox.Show(this.questions.Count().ToString());
-            for (int i = 0; i < this.questions.Count(); i++)
+            for (int i = 0; i < this.questions.Length; i++)
             {
                 if (this.questions[i].correctAnswer == this.questions[i].UserAnswer)
                 {
                     score++;
                 }
             }
-            MessageBox.Show(((score / questions.Count())).ToString());
-            this.labelScore.Text = ((score / questions.Count()) * 100).ToString() + " %";
+            this.labelScore.Text = "Score: " + (score * 100 / questions.Length).ToString() + " %";
         }
 
         private void labelCorrectAnswer_Click(object sender, EventArgs e)
@@ -135,6 +136,11 @@ namespace Univercity
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

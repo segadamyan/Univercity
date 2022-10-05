@@ -1,4 +1,4 @@
-﻿namespace Univercity
+﻿namespace University
 {
     partial class test
     {
@@ -42,8 +42,10 @@
             // 
             // buttonAnsw1
             // 
-            this.buttonAnsw1.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonAnsw1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonAnsw1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnsw1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonAnsw1.ForeColor = System.Drawing.Color.GhostWhite;
             this.buttonAnsw1.Location = new System.Drawing.Point(42, 244);
             this.buttonAnsw1.Name = "buttonAnsw1";
             this.buttonAnsw1.Size = new System.Drawing.Size(370, 80);
@@ -55,7 +57,10 @@
             // 
             // buttonAnsw2
             // 
+            this.buttonAnsw2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonAnsw2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnsw2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonAnsw2.ForeColor = System.Drawing.Color.GhostWhite;
             this.buttonAnsw2.Location = new System.Drawing.Point(582, 244);
             this.buttonAnsw2.Name = "buttonAnsw2";
             this.buttonAnsw2.Size = new System.Drawing.Size(370, 80);
@@ -67,7 +72,10 @@
             // 
             // buttonAnsw3
             // 
+            this.buttonAnsw3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonAnsw3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnsw3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonAnsw3.ForeColor = System.Drawing.Color.GhostWhite;
             this.buttonAnsw3.Location = new System.Drawing.Point(42, 356);
             this.buttonAnsw3.Name = "buttonAnsw3";
             this.buttonAnsw3.Size = new System.Drawing.Size(370, 80);
@@ -79,7 +87,10 @@
             // 
             // buttonAnsw4
             // 
+            this.buttonAnsw4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonAnsw4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnsw4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonAnsw4.ForeColor = System.Drawing.Color.GhostWhite;
             this.buttonAnsw4.Location = new System.Drawing.Point(582, 356);
             this.buttonAnsw4.Name = "buttonAnsw4";
             this.buttonAnsw4.Size = new System.Drawing.Size(370, 80);
@@ -148,6 +159,7 @@
             this.Controls.Add(this.buttonAnsw1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "test";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "test";
             this.Load += new System.EventHandler(this.test_Load);
             this.ResumeLayout(false);
