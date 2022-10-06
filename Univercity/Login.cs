@@ -7,16 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using Microsoft.Data.Sqlite;
+using System.Data.SQLite;
+using System.Windows.Forms.VisualStyles;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace University
 {
     public partial class Login : Form
     {
-        public Login()
+        private User user;
+        public Login(User user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -65,7 +68,30 @@ namespace University
 
             } else
             {
-                SqliteConnection sqlite_conn;
+                using (SQLiteConnection conn = new SQLiteConnection("Data Source=user.db;Version=3;"))
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM user WHERE username = @user AND password = @pass";
+                    SQLiteCommand command = new SQLiteCommand(query, conn);
+                    command.Parameters.AddWithValue("@user", this.textBoxLogin.Text);
+                    command.Parameters.AddWithValue("@pass", this.textBoxPassword.Text);
+                    SQLiteDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        int id = Convert.ToInt32(reader["id"]);
+                        string username = reader["username"].ToString();
+                        this.user.id = id;
+                        this.user.username = username;
+                        MessageBox.Show("Hello, " + username);
+                        Close();
+
+                    } else
+                    {
+                        MessageBox.Show("Somthing wet wrong, try again");
+                        this.textBoxLogin.Text = "";
+                        this.textBoxPassword.Text = "";
+                    }
+                }
             }
             
         }

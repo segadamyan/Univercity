@@ -12,14 +12,17 @@ namespace University
 {
     public partial class test : Form
     {
+        private User user;
         int correctAnswer;
         int questionNumber;
         static readonly int TOTAL_QUESTIONS = 3;
         DateTime startTime;
 
-        public test()
+        public test(User user)
         {
             InitializeComponent();
+            this.user = user;
+            this.labelUserName.Text = user.username;
             labelTimer.Text = "05:00";
             askQuestion(0);
             timerTest.Tick += new EventHandler(TimerEventProcessor);
@@ -103,11 +106,10 @@ namespace University
             {
                 timerTest.Stop();
                 endTest();
-                this.questionNumber = 0;
-                this.startTime = DateTime.Now;
-                timerTest.Start();
+            } else
+            {
+                askQuestion(questionNumber);
             }
-            askQuestion(questionNumber);
         }
 
         private void endTest()
@@ -123,6 +125,7 @@ namespace University
             this.Close();
             Report report = new Report(questions);
             report.ShowDialog();
+            this.user.id = 0;
         }
 
         private void labelProcess_Click(object sender, EventArgs e)
@@ -135,9 +138,15 @@ namespace University
 
         }
 
+        private void labelUserName_SizeChanged(object sender, EventArgs e)
+        {
+            this.labelUserName.Left = (this.ClientSize.Width - this.labelQuestion.Size.Width) / 2;
+        }
+
         private void labelQuestion_SizeChanged(object sender, EventArgs e)
         {
             this.labelQuestion.Left = (this.ClientSize.Width - this.labelQuestion.Size.Width) / 2;
         }
+
     }
 }

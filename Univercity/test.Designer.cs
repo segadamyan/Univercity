@@ -38,6 +38,7 @@
             this.labelProcess = new System.Windows.Forms.Label();
             this.timerTest = new System.Windows.Forms.Timer(this.components);
             this.labelTimer = new System.Windows.Forms.Label();
+            this.labelUserName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonAnsw1
@@ -143,6 +144,19 @@
             this.labelTimer.TabIndex = 6;
             this.labelTimer.Text = "Timer";
             // 
+            // labelUserName
+            // 
+            this.labelUserName.AutoSize = true;
+            this.labelUserName.BackColor = System.Drawing.Color.Transparent;
+            this.labelUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelUserName.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelUserName.Location = new System.Drawing.Point(456, 26);
+            this.labelUserName.Name = "labelUserName";
+            this.labelUserName.Size = new System.Drawing.Size(109, 30);
+            this.labelUserName.TabIndex = 7;
+            this.labelUserName.Text = "Username";
+            this.labelUserName.SizeChanged += new System.EventHandler(this.labelUserName_SizeChanged);
+            // 
             // test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -150,6 +164,7 @@
             this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(997, 521);
+            this.Controls.Add(this.labelUserName);
             this.Controls.Add(this.labelTimer);
             this.Controls.Add(this.labelProcess);
             this.Controls.Add(this.labelQuestion);
@@ -177,5 +192,6 @@
         private Label labelProcess;
         private System.Windows.Forms.Timer timerTest;
         private Label labelTimer;
+        private Label labelUserName;
     }
 }
