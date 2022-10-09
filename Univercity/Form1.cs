@@ -25,6 +25,12 @@ namespace University
             Login login = new Login(user);
             login.ShowDialog();
         }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            Registration registration = new Registration();
+            registration.ShowDialog();
+        }
     }
 
     public class User

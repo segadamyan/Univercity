@@ -79,6 +79,7 @@
             this.buttonRegister.TabIndex = 2;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // pictureBox1
             // 
@@ -97,12 +98,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1219, 626);
+            this.ClientSize = new System.Drawing.Size(1028, 626);
             this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.takeTest);
             this.Controls.Add(this.pictureBox1);
-            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";

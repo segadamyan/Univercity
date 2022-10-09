@@ -63,10 +63,25 @@ namespace University
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (this.textBoxLogin.Text.Trim() == "" && this.textBoxPassword.Text.Trim() == "")
+            bool validCredentials = true;
+            if (this.textBoxLogin.Text.Trim() == "")
             {
-
+                this.labelLogin.ForeColor = Color.Red;
+                validCredentials = false;
             } else
+            {
+                this.labelLogin.ForeColor = Color.MidnightBlue;
+            }
+            if (this.textBoxPassword.Text.Trim() == "")
+            {
+                this.labelPassword.ForeColor = Color.Red;
+                validCredentials = false;
+            } else
+            {
+                this.labelPassword.ForeColor = Color.MidnightBlue;
+            }
+
+            if (validCredentials)
             {
                 using (SQLiteConnection conn = new SQLiteConnection("Data Source=user.db;Version=3;"))
                 {
@@ -85,7 +100,8 @@ namespace University
                         MessageBox.Show("Hello, " + username);
                         Close();
 
-                    } else
+                    }
+                    else
                     {
                         MessageBox.Show("Somthing wet wrong, try again");
                         this.textBoxLogin.Text = "";
@@ -93,7 +109,10 @@ namespace University
                     }
                 }
             }
-            
+            else
+            {
+                MessageBox.Show("Please check credentials");
+            }   
         }
     }
 }
