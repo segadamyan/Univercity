@@ -86,7 +86,6 @@
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(364, 28);
             this.textBoxLogin.TabIndex = 8;
-            this.textBoxLogin.TextChanged += new System.EventHandler(this.textBoxLogin_TextChanged);
             // 
             // panel2
             // 
@@ -172,7 +171,6 @@
             this.labelLogin.Size = new System.Drawing.Size(109, 30);
             this.labelLogin.TabIndex = 11;
             this.labelLogin.Text = "Username";
-            this.labelLogin.Click += new System.EventHandler(this.labelLogin_Click);
             // 
             // labelPassword
             // 

@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,16 +20,6 @@ namespace University
         {
             InitializeComponent();
             addComboboxItems();
-        }
-
-        private void textBoxLogin_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelLogin_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void addComboboxItems()
@@ -58,6 +49,20 @@ namespace University
             Close();
         }
 
+        public bool IsValidEmail(string emailaddress)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(emailaddress);
+
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
+
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             bool validCredentials = true;
@@ -70,9 +75,8 @@ namespace University
             {
                 this.labelLogin.ForeColor = Color.MidnightBlue;
             }
-            if (this.textBoxEmail.Text.Trim() == "")
+            if (this.textBoxEmail.Text.Trim() == "" || !this.IsValidEmail(this.textBoxEmail.Text.Trim()))
             {
-                // REGEX CHECKING
                 this.label1.ForeColor = Color.Red;
                 validCredentials = false;
             }
@@ -98,23 +102,32 @@ namespace University
                 {
                     conn.Open();
                     string query = "INSERT INTO user(username, password, email, faculty_id) VALUES(@user, @pass, @email, @faculty)";
-                    SQLiteCommand command = new SQLiteCommand(query, conn);
+                    using SQLiteCommand command = new SQLiteCommand(query, conn);
                     command.Parameters.AddWithValue("@user", this.textBoxLogin.Text);
                     command.Parameters.AddWithValue("@pass", this.textBoxPassword.Text);
                     command.Parameters.AddWithValue("@email", this.textBoxEmail.Text);
                     command.Parameters.AddWithValue("@faculty", this.comboBoxFaculty.SelectedIndex + 1);
-                    MessageBox.Show(this.textBoxLogin.Text);
-                    MessageBox.Show(this.textBoxPassword.Text);
-                    MessageBox.Show(this.textBoxEmail.Text);
-                    MessageBox.Show((this.comboBoxFaculty.SelectedIndex + 1).ToString());
                     try
                     {
                         command.ExecuteNonQuery();
                         command.Connection.Close();
+                        MessageBox.Show("Successfully registered.");
+                        Close();
                     } catch (Exception ex)
                     {
-                        MessageBox.Show(ex.ToString());
-                        MessageBox.Show("Somthing wet wrong.");
+                        if (ex.Message.Contains("constraint") && ex.Message.Contains("username"))
+                        {
+                            MessageBox.Show("User by this username already exists");
+                            this.labelLogin.ForeColor = Color.Red;
+                        } else if (ex.Message.Contains("constraint") && ex.Message.Contains("email"))
+                        {
+                            MessageBox.Show("User by this email already exists");
+                            this.label1.ForeColor = Color.Red;
+                        } else
+                        {
+                            MessageBox.Show(ex.ToString());
+                            MessageBox.Show("Somthing wet wrong.");
+                        }
                     }
                 }
             }

@@ -6,6 +6,7 @@ namespace University
         public Form1()
         {
             InitializeComponent();
+            this.takeTest.Visible = false;
         }
 
         private void takeTest_Click(object sender, EventArgs e)
@@ -24,12 +25,18 @@ namespace University
         {
             Login login = new Login(user);
             login.ShowDialog();
+            if (user.id != 0)
+            {
+                this.takeTest.Visible = true;
+            }
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             Registration registration = new Registration();
             registration.ShowDialog();
+            this.user.id = 0;
+            this.takeTest.Visible = false;
         }
     }
 

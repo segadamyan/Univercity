@@ -87,10 +87,10 @@ namespace University
                 {
                     conn.Open();
                     string query = "SELECT * FROM user WHERE username = @user AND password = @pass";
-                    SQLiteCommand command = new SQLiteCommand(query, conn);
+                    using SQLiteCommand command = new SQLiteCommand(query, conn);
                     command.Parameters.AddWithValue("@user", this.textBoxLogin.Text);
                     command.Parameters.AddWithValue("@pass", this.textBoxPassword.Text);
-                    SQLiteDataReader reader = command.ExecuteReader();
+                    using SQLiteDataReader reader = command.ExecuteReader();
                     if (reader.Read())
                     {
                         int id = Convert.ToInt32(reader["id"]);
@@ -99,7 +99,6 @@ namespace University
                         this.user.username = username;
                         MessageBox.Show("Hello, " + username);
                         Close();
-
                     }
                     else
                     {
@@ -107,6 +106,9 @@ namespace University
                         this.textBoxLogin.Text = "";
                         this.textBoxPassword.Text = "";
                     }
+                    reader.Close();
+                    command.Connection.Close();
+                    conn.Close();
                 }
             }
             else
