@@ -46,11 +46,11 @@
             // 
             this.labelQuestion.AutoSize = true;
             this.labelQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelQuestion.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelQuestion.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelQuestion.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelQuestion.Location = new System.Drawing.Point(200, 110);
+            this.labelQuestion.Location = new System.Drawing.Point(197, 117);
             this.labelQuestion.Name = "labelQuestion";
-            this.labelQuestion.Size = new System.Drawing.Size(170, 32);
+            this.labelQuestion.Size = new System.Drawing.Size(134, 25);
             this.labelQuestion.TabIndex = 0;
             this.labelQuestion.Text = "LabelQuestion";
             this.labelQuestion.Click += new System.EventHandler(this.labelQuestion_Click);
@@ -58,9 +58,9 @@
             // labelUserAnswer
             // 
             this.labelUserAnswer.BackColor = System.Drawing.Color.Transparent;
-            this.labelUserAnswer.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelUserAnswer.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelUserAnswer.ForeColor = System.Drawing.SystemColors.Window;
-            this.labelUserAnswer.Location = new System.Drawing.Point(197, 159);
+            this.labelUserAnswer.Location = new System.Drawing.Point(197, 165);
             this.labelUserAnswer.Name = "labelUserAnswer";
             this.labelUserAnswer.Size = new System.Drawing.Size(559, 32);
             this.labelUserAnswer.TabIndex = 1;
@@ -69,9 +69,9 @@
             // labelCorrectAnswer
             // 
             this.labelCorrectAnswer.BackColor = System.Drawing.Color.Transparent;
-            this.labelCorrectAnswer.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelCorrectAnswer.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelCorrectAnswer.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelCorrectAnswer.Location = new System.Drawing.Point(197, 214);
+            this.labelCorrectAnswer.Location = new System.Drawing.Point(197, 220);
             this.labelCorrectAnswer.Name = "labelCorrectAnswer";
             this.labelCorrectAnswer.Size = new System.Drawing.Size(559, 32);
             this.labelCorrectAnswer.TabIndex = 2;

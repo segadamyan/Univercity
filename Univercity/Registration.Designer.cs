@@ -166,7 +166,7 @@
             this.labelLogin.AutoSize = true;
             this.labelLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelLogin.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.labelLogin.Location = new System.Drawing.Point(192, 276);
+            this.labelLogin.Location = new System.Drawing.Point(182, 276);
             this.labelLogin.Name = "labelLogin";
             this.labelLogin.Size = new System.Drawing.Size(109, 30);
             this.labelLogin.TabIndex = 11;
@@ -177,7 +177,7 @@
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelPassword.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.labelPassword.Location = new System.Drawing.Point(210, 378);
+            this.labelPassword.Location = new System.Drawing.Point(200, 378);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(91, 25);
             this.labelPassword.TabIndex = 12;
@@ -188,7 +188,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(237, 327);
+            this.label1.Location = new System.Drawing.Point(227, 327);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 30);
             this.label1.TabIndex = 13;
@@ -199,7 +199,7 @@
             this.labelRepeatPassowrd.AutoSize = true;
             this.labelRepeatPassowrd.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelRepeatPassowrd.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.labelRepeatPassowrd.Location = new System.Drawing.Point(145, 429);
+            this.labelRepeatPassowrd.Location = new System.Drawing.Point(135, 429);
             this.labelRepeatPassowrd.Name = "labelRepeatPassowrd";
             this.labelRepeatPassowrd.Size = new System.Drawing.Size(156, 25);
             this.labelRepeatPassowrd.TabIndex = 14;

@@ -15,7 +15,7 @@ namespace University
         private User user;
         int correctAnswer;
         int questionNumber;
-        static readonly int TOTAL_QUESTIONS = 3;
+        static readonly int TOTAL_QUESTIONS = 4;
         DateTime startTime;
 
         public test(User user)
@@ -66,7 +66,8 @@ namespace University
         {
             new Question("Which of the following is NOT an Arithmetic operator in C#.NET?", "**", "+", "%", "/", 1),
             new Question("Which of the following are NOT Relational operators in C#.NET?", ">=", "!=", "Not", "<>=", 3),
-            new Question("Console.WriteLine(13 / 2 + \" \" + 13 % 2);", "6.5 1", "6.5 0", "6 0", "6 1", 4)
+            new Question("Console.WriteLine(13 / 2 + \" \" + 13 % 2);", "6.5 1", "6.5 0", "6 0", "6 1", 4),
+            new Question("Which of the following is the correct way to create an object of the class Sample?", "Sample s = new Sample();", "Sample s;", "s = new Sample();", "Sample ()", 1),
         };
 
         public class Question
