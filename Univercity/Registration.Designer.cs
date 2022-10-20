@@ -222,7 +222,10 @@
             // 
             // comboBoxFaculty
             // 
+            this.comboBoxFaculty.BackColor = System.Drawing.SystemColors.Window;
+            this.comboBoxFaculty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFaculty.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxFaculty.ForeColor = System.Drawing.Color.MidnightBlue;
             this.comboBoxFaculty.FormattingEnabled = true;
             this.comboBoxFaculty.Location = new System.Drawing.Point(710, 318);
             this.comboBoxFaculty.Name = "comboBoxFaculty";
